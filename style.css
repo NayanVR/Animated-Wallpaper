@@ -1,0 +1,77 @@
+body {
+  background-color: #070707;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hero {
+  width: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+#grid-container {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  justify-content: center;
+}
+
+.overlay-gradient {
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(7, 7, 7, 0.9) 0%,
+    rgba(7, 7, 7, 0) 35%,
+    rgba(7, 7, 7, 0.4) 100%
+  );
+}
+
+.tile {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  opacity: 0.1;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
